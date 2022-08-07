@@ -7,6 +7,9 @@
              xmlns:views="clr-namespace:Patients.Views"
              x:Class="Patients.Views.TabPage"
              Title="Patients">
+    <NavigationPage.TitleView>
+        <Label Text="Patients" FontFamily="{StaticResource OpenSansRegular}" TextColor="White" FontSize="24"/>
+    </NavigationPage.TitleView>
     <ContentPage.Resources>
         <ResourceDictionary>
             <ControlTemplate x:Key="PatientTabTemplate">
