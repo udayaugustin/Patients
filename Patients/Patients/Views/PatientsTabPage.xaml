@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:views="clr-namespace:Patients.Views"
+             x:Class="Patients.Views.PatientsTabPage"
+             Title="Patients">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ControlTemplate x:Key="PatientTabTemplate">
+                <Grid Padding="0,10,0,10" VerticalOptions="Center" HorizontalOptions="Center" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Label Grid.Row="0" Text="{TemplateBinding Unicode}" FontFamily="FA" TextColor="White" 
+                           HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="24"/>
+                    <Label Grid.Row="1" Text="{TemplateBinding Text}" TextColor="White" FontSize="16"/>
+                </Grid>
+            </ControlTemplate>
+
+            <ControlTemplate x:Key="MenuTabTemplate">
+                <Grid Padding="0,10,0,10" VerticalOptions="Center" HorizontalOptions="Center" x:Name="GridWrapper">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <RelativeLayout Grid.Row="0" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" HeightRequest="22">
+                        <Label Text="{StaticResource MenuBar}" FontFamily="FA" x:Name="label2" FontSize="24" TextColor="White"
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=12}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}"/>
+                        <Frame Padding="0" Margin="0" BackgroundColor="Red" CornerRadius="20"
+                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, Property=X, ElementName=label2, Constant=10}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, Property=Y, ElementName=label2, Constant=-10}">
+                            <Label Text="8" Padding="8,3,8,3" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="White" 
+                                   FontSize="12" />
+                        </Frame>
+                    </RelativeLayout>
+                    <Label Grid.Row="1" x:Name="MenuLabel" Text="Menu" TextColor="White" FontSize="16" />
+                </Grid>
+                
+            </ControlTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <xct:TabView TabStripBackgroundColor="{StaticResource BarBackgroundColor}" TabStripPlacement="Bottom" TabStripHeight="100">
+        <views:CustomTabViewItem Style="{StaticResource TabViewItemStyle}"
+            Text="Patient"
+            Unicode="{StaticResource PeopleGroup}"
+            ControlTemplate="{StaticResource PatientTabTemplate}">
+            <views:PatientsView/>
+        </views:CustomTabViewItem>
+        <views:CustomTabViewItem
+            Text="Help"
+            Unicode="{StaticResource CircleQuestion}"
+            ControlTemplate="{StaticResource PatientTabTemplate}"
+            Style="{StaticResource TabViewItemStyle}">
+            <Label Text="Heee"/>
+        </views:CustomTabViewItem>
+        <views:CustomTabViewItem
+            Text="Menu"
+            Unicode="{StaticResource MenuBar}"
+            ControlTemplate="{StaticResource MenuTabTemplate}"
+            Style="{StaticResource TabViewItemStyle}">
+            
+            <Label Text="Menu................."/>
+        </views:CustomTabViewItem>
+    </xct:TabView>
+    
+    <!--<xct:TabView TabStripBackgroundColor="{StaticResource BarBackgroundColor}" TabStripPlacement="Bottom" TabStripHeight="100">
+        <xct:TabViewItem Text="Patient">
+            <xct:TabViewItem.Icon>
+                <FontImageSource FontFamily="FA" Size="26" Glyph="{StaticResource PeopleGroup}"  Color="White"/>
+            </xct:TabViewItem.Icon>
+            <views:PatientsView/>
+        </xct:TabViewItem>
+
+        <xct:TabViewItem Text="Help">
+            <xct:TabViewItem.Icon>
+                <FontImageSource FontFamily="FA" Size="26" Glyph="{StaticResource CircleQuestion}"  Color="White"/>
+            </xct:TabViewItem.Icon>
+            <Label Text="Help"/>
+        </xct:TabViewItem>
+        
+        <xct:TabViewItem Text="Menu" BadgeText="7" BadgeBackgroundColor="#c6d2ef" BadgeTextColor="Black">
+            <xct:TabViewItem.Icon> 
+                <FontImageSource FontFamily="FA" Size="26" Glyph="{StaticResource MenuBar}"  Color="White"/>
+            </xct:TabViewItem.Icon>
+            <Label Text="Menu"/>
+        </xct:TabViewItem>
+    </xct:TabView>-->
+</ContentPage>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Patients.Views.PatientsView"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:views="clr-namespace:Patients.Views"
+             x:Name="PatientListView">
+    <ContentView.Content>
+        <StackLayout Orientation="Vertical">
+            <Grid BackgroundColor="{StaticResource BarBackgroundColor}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Frame Grid.Row="0" Style="{StaticResource SearchBarFrame}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <views:CustomSearchBar Grid.Column="0" x:Name="searchBar" Text="{Binding SearchQuery}"
+                                               SearchCommand="{Binding SearchCommand}"/>
+                        <Button Grid.Column="1" Text="{StaticResource SearchIcon}" Command="{Binding SearchCommand}" Style="{StaticResource SearchBtn}"/>
+                    </Grid>
+                </Frame>
+            </Grid>
+            <ListView x:Name="listView" ItemsSource="{Binding Patients}" Style="{StaticResource PatientListview}" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Style="{StaticResource PatientViewCellGrid}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="10"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="10"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="15"/>
+                                </Grid.RowDefinitions>
+                                <BoxView Grid.Column="0" Grid.Row="0" Grid.RowSpan="5" Style="{StaticResource ListviewVerticalLine}"/>
+                                <Frame Grid.Column="1" Grid.Row="1" Style="{StaticResource PlusButtonFrame}">
+                                    <Label Text="+" Style="{StaticResource PlusLabel}">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Path=BindingContext.ToggleCommand, Source={x:Reference PatientListView}}" CommandParameter="{Binding .}"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </Frame>
+                                <Label Grid.Column="2" Grid.Row="1" Text="{Binding Name}" VerticalOptions="Center" TextColor="Black"/>
+                                <CheckBox Grid.Column="3" Grid.Row="1" Style="{StaticResource ListviewCheckBox}"/>
+                                <StackLayout Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="3" Margin="0,0,0,10"
+                                             IsVisible="{Binding IsVisible}">
+                                    <Label Text="Details:" FontSize="Large" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Age, StringFormat='Age: {0}'}"/>
+                                    <Label Text="{Binding BloodGroup, StringFormat='Blood Group: {0}'}"/>
+                                </StackLayout>
+                                <BoxView Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="4" BackgroundColor="White"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

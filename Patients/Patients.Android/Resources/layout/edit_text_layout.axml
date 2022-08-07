@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<com.google.android.material.textfield.TextInputLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/entryInputLayout"
+    android:theme="@style/Material"
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:suffixText="\uf577"
+    app:suffixTextColor="@android:color/black"
+    app:expandedHintEnabled="false"  
+    android:background="@drawable/text_input_layout_border"
+    android:padding="5dp"
+    >
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/entry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"   
+        android:background="@drawable/edit_text_border"
+        />
+</com.google.android.material.textfield.TextInputLayout>

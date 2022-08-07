@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:local="clr-namespace:Patients.Views"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:material="clr-namespace:Plugin.MaterialDesignControls;assembly=Plugin.MaterialDesignControls"
+             xmlns:behaviour="clr-namespace:Patients.Helpers"
+             x:Class="Patients.Views.LoginPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="150"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" Source="logo" Style="{StaticResource Logo}"/>
+        <StackLayout Grid.Row="1" Style="{StaticResource FormWrapper}">
+            <Label Text="Email" Style="{StaticResource FieldLabel}" FontAttributes="Bold"/>
+            <material:MaterialEntry Style="{StaticResource EntryField}" x:Name="entry">
+                <material:MaterialEntry.CustomTrailingIcon>
+                    <Label Text="Not you?" TextColor="#5272c2"/>
+                </material:MaterialEntry.CustomTrailingIcon>
+                <material:MaterialEntry.Behaviors>
+                    <behaviour:ShadowEffectBehaviour></behaviour:ShadowEffectBehaviour>
+                </material:MaterialEntry.Behaviors>
+            </material:MaterialEntry>
+
+            <Label Text="Password" Style="{StaticResource FieldLabel}" Margin="0,20,0,0"/>
+            <material:MaterialEntry Style="{StaticResource EntryField}" IsPassword="True" ClearIconIsVisible="False">
+                <material:MaterialEntry.CustomTrailingIcon>
+                    <Label Text="{StaticResource FingerPrintIcon}" Style="{StaticResource EntryFieldIcon}" TextColor="Black"/>
+                </material:MaterialEntry.CustomTrailingIcon>
+                <material:MaterialEntry.CustomShowPasswordIcon>
+                    <Label Text="{StaticResource EyeSlash}" Style="{StaticResource EntryFieldIcon}"/>
+                </material:MaterialEntry.CustomShowPasswordIcon>
+                <material:MaterialEntry.CustomHidePasswordIcon>
+                    <Label Text="{StaticResource Eye}" Style="{StaticResource EntryFieldIcon}"/>
+                </material:MaterialEntry.CustomHidePasswordIcon>
+                <material:MaterialEntry.Behaviors>
+                    <behaviour:ShadowEffectBehaviour></behaviour:ShadowEffectBehaviour>
+                </material:MaterialEntry.Behaviors>
+            </material:MaterialEntry>
+
+            <Label Text="Forgot password?" Style="{StaticResource ForgotPasswordLabel}"/>
+
+            <Button Text="Log In" Style="{StaticResource LoginButton}"/>
+            <Button Text="Sign Up" Style="{StaticResource SignUpButton}"
+                    xct:ShadowEffect.Color="#eeeeee"
+                    xct:ShadowEffect.Radius="10"/>
+            <Label Text="{StaticResource Language}" Style="{StaticResource LanguageLabel}"/>
+        </StackLayout>
+
+        <Grid Grid.Row="2" Style="{StaticResource FooterWrapper}" >
+            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                <Label Text="Privacy Policy" Style="{StaticResource FooterLink}"/>
+                <BoxView Style="{StaticResource VerticalSeperator}"/>
+                <Label Text="Terms and Conditions" Style="{StaticResource FooterLink}"/>
+                <BoxView Style="{StaticResource VerticalSeperator}"/>
+                <Label Text="EULA" Style="{StaticResource FooterLink}"/>
+            </StackLayout>
+        </Grid>
+        
+    </Grid>
+  
+</ContentPage>
