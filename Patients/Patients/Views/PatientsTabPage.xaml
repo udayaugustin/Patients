@@ -55,38 +55,14 @@
             Unicode="{StaticResource CircleQuestion}"
             ControlTemplate="{StaticResource PatientTabTemplate}"
             Style="{StaticResource TabViewItemStyle}">
-            <Label Text="Heee"/>
+            <views:HelpView/>
         </views:CustomTabViewItem>
         <views:CustomTabViewItem
             Text="Menu"
             Unicode="{StaticResource MenuBar}"
             ControlTemplate="{StaticResource MenuTabTemplate}"
             Style="{StaticResource TabViewItemStyle}">
-            
-            <Label Text="Menu................."/>
+            <views:MenuView/>
         </views:CustomTabViewItem>
     </xct:TabView>
-    
-    <!--<xct:TabView TabStripBackgroundColor="{StaticResource BarBackgroundColor}" TabStripPlacement="Bottom" TabStripHeight="100">
-        <xct:TabViewItem Text="Patient">
-            <xct:TabViewItem.Icon>
-                <FontImageSource FontFamily="FA" Size="26" Glyph="{StaticResource PeopleGroup}"  Color="White"/>
-            </xct:TabViewItem.Icon>
-            <views:PatientsView/>
-        </xct:TabViewItem>
-
-        <xct:TabViewItem Text="Help">
-            <xct:TabViewItem.Icon>
-                <FontImageSource FontFamily="FA" Size="26" Glyph="{StaticResource CircleQuestion}"  Color="White"/>
-            </xct:TabViewItem.Icon>
-            <Label Text="Help"/>
-        </xct:TabViewItem>
-        
-        <xct:TabViewItem Text="Menu" BadgeText="7" BadgeBackgroundColor="#c6d2ef" BadgeTextColor="Black">
-            <xct:TabViewItem.Icon> 
-                <FontImageSource FontFamily="FA" Size="26" Glyph="{StaticResource MenuBar}"  Color="White"/>
-            </xct:TabViewItem.Icon>
-            <Label Text="Menu"/>
-        </xct:TabViewItem>
-    </xct:TabView>-->
 </ContentPage>

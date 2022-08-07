@@ -11,8 +11,7 @@
 		<!-- colorPrimaryDark is used for the status bar -->
 		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
 		<!-- colorAccent is used as the default value for colorControlActivated which is used to tint widgets -->
-		<item name="colorAccent">@color/colorAccent</item>
-		<item name="textInputStyle">@style/MyCustomOutlined</item>
+		<item name="colorAccent">@color/colorAccent</item>		
 	</style>
 
 	<style name="MainTheme.Splash" parent="Theme.AppCompat.Light.NoActionBar">
@@ -31,16 +30,5 @@
 	<style name="SuffixTextAppearance" parent="TextAppearance.AppCompat">
 		<item name="android:textSize">16sp</item>
 		<item name="android:gravity">center</item>		
-	</style>
-
-	<style name="MyCustomOutlined" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-		<item name="materialThemeOverlay">@style/ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox</item>
-	</style>
-
-	<style name="MyThemeOverlayOutlined">
-		<item name="editTextStyle">@style/MyTextInputEditText_outlinedBox</item>
-	</style>
-
-	<style name="MyTextInputEditText_outlinedBox" parent="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox">				
-	</style>
+	</style>	
 </resources>
