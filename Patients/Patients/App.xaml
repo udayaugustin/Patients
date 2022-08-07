@@ -67,6 +67,11 @@
             <Setter Property="Type" Value="Outlined"/>
         </Style>
 
+        <Style x:Key="PasswordField" TargetType="material:MaterialEntry" BasedOn="{StaticResource EntryField}">
+            <Setter Property="IsPassword" Value="True"/>
+            <Setter Property="ClearIconIsVisible" Value="False"/>
+        </Style>
+
         <Style x:Key="EntryFieldIcon" TargetType="Label">
             <Setter Property="HorizontalTextAlignment" Value="Center"/>
             <Setter Property="VerticalTextAlignment" Value="Center"/>
@@ -187,6 +192,45 @@
         <Style TargetType="SearchBar" ApplyToDerivedTypes="True">
             <Setter Property="FontFamily" Value="{StaticResource OpenSansRegular}"/>
         </Style>
-                
+
+        <Style x:Key="TabViewGrid" TargetType="Grid">
+            <Setter Property="Padding" Value="0,10,0,10"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+        </Style>
+
+        <Style x:Key="TabViewMenuLayout" TargetType="RelativeLayout">
+            <Setter Property="HeightRequest" Value="22"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        </Style>
+
+        <Style x:Key="BadgeWrapper" TargetType="Frame">
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="BackgroundColor" Value="Red"/>
+            <Setter Property="CornerRadius" Value="20"/>
+        </Style>
+
+        <Style x:Key="Badge" TargetType="Label">
+            <Setter Property="Padding" Value="8,3,8,3"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+        
+        <Style x:Key="TabViewIcon" TargetType="Label">
+            <Setter Property="FontFamily" Value="FA"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="TabViewLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="TextColor" Value="White"/>
+        </Style>
     </Application.Resources>
 </prism:PrismApplication>

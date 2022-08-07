@@ -20,7 +20,7 @@ namespace Patients
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/PatientsTabPage");
+            await NavigationService.NavigateAsync("NavigationPage/LoginPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

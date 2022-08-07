@@ -10,36 +10,34 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <ControlTemplate x:Key="PatientTabTemplate">
-                <Grid Padding="0,10,0,10" VerticalOptions="Center" HorizontalOptions="Center" >
+                <Grid Style="{StaticResource TabViewGrid}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-                    
-                    <Label Grid.Row="0" Text="{TemplateBinding Unicode}" FontFamily="FA" TextColor="White" 
-                           HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="24"/>
-                    <Label Grid.Row="1" Text="{TemplateBinding Text}" TextColor="White" FontSize="16"/>
+
+                    <Label Grid.Row="0" Text="{TemplateBinding Unicode}" Style="{StaticResource TabViewIcon}"/>
+                    <Label Grid.Row="1" Text="{TemplateBinding Text}" Style="{StaticResource TabViewLabel}"/>
                 </Grid>
             </ControlTemplate>
 
             <ControlTemplate x:Key="MenuTabTemplate">
-                <Grid Padding="0,10,0,10" VerticalOptions="Center" HorizontalOptions="Center" x:Name="GridWrapper">
+                <Grid Style="{StaticResource TabViewGrid}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-                    <RelativeLayout Grid.Row="0" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" HeightRequest="22">
-                        <Label Text="{StaticResource MenuBar}" FontFamily="FA" x:Name="label2" FontSize="24" TextColor="White"
+                    <RelativeLayout Grid.Row="0" Style="{StaticResource TabViewMenuLayout}">
+                        <Label Text="{StaticResource MenuBar}" x:Name="MenuIcon" Style="{StaticResource TabViewIcon}"
                        RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=12}"
                        RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}"/>
-                        <Frame Padding="0" Margin="0" BackgroundColor="Red" CornerRadius="20"
-                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, Property=X, ElementName=label2, Constant=10}"
-                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, Property=Y, ElementName=label2, Constant=-10}">
-                            <Label Text="8" Padding="8,3,8,3" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="White" 
-                                   FontSize="12" />
+                        <Frame Style="{StaticResource BadgeWrapper}"
+                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, Property=X, ElementName=MenuIcon, Constant=10}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, Property=Y, ElementName=MenuIcon, Constant=-10}">
+                            <Label Text="8" Style="{StaticResource Badge}"/>
                         </Frame>
                     </RelativeLayout>
-                    <Label Grid.Row="1" x:Name="MenuLabel" Text="Menu" TextColor="White" FontSize="16" />
+                    <Label Grid.Row="1" Text="Menu" Style="{StaticResource TabViewLabel}" />
                 </Grid>
                 
             </ControlTemplate>
