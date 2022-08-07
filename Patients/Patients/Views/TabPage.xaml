@@ -5,7 +5,7 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:views="clr-namespace:Patients.Views"
-             x:Class="Patients.Views.PatientsTabPage"
+             x:Class="Patients.Views.TabPage"
              Title="Patients">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -51,7 +51,7 @@
             Text="Patient"
             Unicode="{StaticResource PeopleGroup}"
             ControlTemplate="{StaticResource PatientTabTemplate}">
-            <views:PatientsView/>
+            <views:PatientView/>
         </views:CustomTabViewItem>
         <views:CustomTabViewItem
             Text="Help"

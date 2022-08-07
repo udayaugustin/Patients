@@ -20,7 +20,7 @@ namespace Patients
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/LoginPage");
+            await NavigationService.NavigateAsync("LoginPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -29,8 +29,8 @@ namespace Patients
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
-            containerRegistry.RegisterForNavigation<PatientsTabPage, PatientsTabPageViewModel>();
-            ViewModelLocationProvider.Register<PatientsView, PatientsViewModel>();
+            containerRegistry.RegisterForNavigation<TabPage, TabPageViewModel>();
+            ViewModelLocationProvider.Register<PatientView, PatientTabViewModel>();            
         }
     }
 }

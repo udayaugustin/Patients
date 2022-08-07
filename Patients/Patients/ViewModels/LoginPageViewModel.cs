@@ -39,7 +39,7 @@ namespace Patients.ViewModels
         }
 
         /// <summary>
-        /// A contructor initializes the login page viewmodel. 
+        /// A constructor initializes the login page viewmodel. 
         /// </summary>
         /// <param name="navigationService">The navigation service</param>
         public LoginPageViewModel(INavigationService navigationService)
@@ -55,7 +55,7 @@ namespace Patients.ViewModels
 
         private async Task Login()
         {
-            await navigationService.NavigateAsync("/NavigationPage/PatientsTabPage");
+            await navigationService.NavigateAsync("/NavigationPage/TabPage");
         }
 
         public void Initialize(INavigationParameters parameters)

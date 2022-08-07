@@ -64,7 +64,9 @@
 
         <Style x:Key="EntryField" TargetType="material:MaterialEntry">
             <Setter Property="BorderColor" Value="#e2e2e2"/>
+            <Setter Property="TextColor" Value="Black"/>
             <Setter Property="BackgroundColor" Value="White"/>
+            <Setter Property="FontFamily" Value="{StaticResource OpenSansRegular}"/>
             <Setter Property="Type" Value="Outlined"/>
         </Style>
 

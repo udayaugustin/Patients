@@ -13,10 +13,10 @@ using Xamarin.Forms.Xaml;
 namespace Patients.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PatientsView : ContentView
+    public partial class PatientView : ContentView
     {
         
-        public PatientsView()
+        public PatientView()
         {
             InitializeComponent();                       
         }        

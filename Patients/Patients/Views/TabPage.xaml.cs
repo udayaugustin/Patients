@@ -2,9 +2,9 @@
 
 namespace Patients.Views
 {
-    public partial class PatientsTabPage : ContentPage
+    public partial class TabPage : ContentPage
     {
-        public PatientsTabPage()
+        public TabPage()
         {
             InitializeComponent();
         }
