@@ -1,3 +1,4 @@
+using System.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -5,3 +6,4 @@ using Xamarin.Forms.Xaml;
 [assembly: ExportFont("FASolid.otf", Alias="FA")]
 [assembly: ExportFont("OpenSansBold.ttf", Alias="OpenSansBold")]
 [assembly: ExportFont("OpenSansRegular.ttf", Alias="OpenSansRegular")]
+[assembly: NeutralResourcesLanguage("en-US")]

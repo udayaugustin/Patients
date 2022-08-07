@@ -5,10 +5,11 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:views="clr-namespace:Patients.Views"
+             xmlns:resources="clr-namespace:Patients.Resources"
              x:Class="Patients.Views.TabPage"
              Title="Patients">
     <NavigationPage.TitleView>
-        <Label Text="Patients" FontFamily="{StaticResource OpenSansRegular}" TextColor="White" FontSize="24"/>
+        <Label Text="{x:Static resources:AppResource.Patients}" FontFamily="{StaticResource OpenSansRegular}" TextColor="White" FontSize="24"/>
     </NavigationPage.TitleView>
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -22,7 +23,6 @@
 
                         <Label Grid.Column="0" Grid.Row="0" Text="{TemplateBinding Unicode}" Style="{StaticResource TabViewIcon}"/>
                         <Label Grid.Column="0" Grid.Row="1" Text="{TemplateBinding Text}" Style="{StaticResource TabViewLabel}" HorizontalOptions="Center" />
-                        
                     </Grid>
                     <BoxView Style="{StaticResource TabViewSeperator}"/>
                 </StackLayout>
@@ -44,20 +44,20 @@
                             <Label Text="8" Style="{StaticResource Badge}"/>
                         </Frame>
                     </RelativeLayout>
-                    <Label Grid.Row="1" Text="Menu" Style="{StaticResource TabViewLabel}" HorizontalOptions="Center" />
+                    <Label Grid.Row="1" Text="{x:Static resources:AppResource.Menu}" Style="{StaticResource TabViewLabel}" HorizontalOptions="Center" />
                 </Grid>
             </ControlTemplate>
         </ResourceDictionary>
     </ContentPage.Resources>
     <xct:TabView TabStripBackgroundColor="{StaticResource BarBackgroundColor}" TabStripPlacement="Bottom" TabStripHeight="100">
         <views:CustomTabViewItem Style="{StaticResource TabViewItemStyle}"
-            Text="Patient"
+            Text="{x:Static resources:AppResource.Patient}"
             Unicode="{StaticResource PeopleGroup}"
             ControlTemplate="{StaticResource PatientTabTemplate}">
             <views:PatientView/>
         </views:CustomTabViewItem>
         <views:CustomTabViewItem
-            Text="Help"
+            Text="{x:Static resources:AppResource.Help}"
             Unicode="{StaticResource CircleQuestion}"
             ControlTemplate="{StaticResource PatientTabTemplate}"
             Style="{StaticResource TabViewItemStyle}">

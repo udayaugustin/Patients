@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
-             xmlns:local="clr-namespace:Patients.Views"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:material="clr-namespace:Plugin.MaterialDesignControls;assembly=Plugin.MaterialDesignControls"
              xmlns:behaviour="clr-namespace:Patients.Helpers"
+             xmlns:resources="clr-namespace:Patients.Resources"
              x:Class="Patients.Views.LoginPage">
     <Grid>
         <Grid.RowDefinitions>
@@ -16,18 +16,18 @@
         </Grid.RowDefinitions>
         <Image Grid.Row="0" Source="logo" Style="{StaticResource Logo}"/>
         <StackLayout Grid.Row="1" Style="{StaticResource FormWrapper}">
-            
-            <Label Text="Email" Style="{StaticResource FieldLabel}" FontAttributes="Bold"/>
+
+            <Label Text="{x:Static resources:AppResource.Email}" Style="{StaticResource FieldLabel}" FontAttributes="Bold"/>
             <material:MaterialEntry Text="{Binding Username}" Style="{StaticResource EntryField}" x:Name="entry">
                 <material:MaterialEntry.CustomTrailingIcon>
-                    <Label Text="Not you?" TextColor="#5272c2"/>
+                    <Label Text="{x:Static resources:AppResource.NotYou}" TextColor="#5272c2"/>
                 </material:MaterialEntry.CustomTrailingIcon>
                 <material:MaterialEntry.Behaviors>
                     <behaviour:ShadowEffectBehaviour></behaviour:ShadowEffectBehaviour>
                 </material:MaterialEntry.Behaviors>
             </material:MaterialEntry>
 
-            <Label Text="Password" Style="{StaticResource FieldLabel}" Margin="0,20,0,0"/>
+            <Label Text="{x:Static resources:AppResource.Password}" Style="{StaticResource FieldLabel}" Margin="0,20,0,0"/>
             <material:MaterialEntry Text="{Binding Password}" Style="{StaticResource PasswordField}">
                 <material:MaterialEntry.CustomTrailingIcon>
                     <Label Text="{StaticResource FingerPrintIcon}" Style="{StaticResource EntryFieldIcon}" TextColor="Black"/>
@@ -43,10 +43,10 @@
                 </material:MaterialEntry.Behaviors>
             </material:MaterialEntry>
 
-            <Label Text="Forgot password?" Style="{StaticResource ForgotPasswordLabel}"/>
+            <Label Text="{x:Static resources:AppResource.ForgotPassword}" Style="{StaticResource ForgotPasswordLabel}"/>
 
-            <Button Text="Log In" Style="{StaticResource LoginButton}" Command="{Binding LoginCommand}"/>
-            <Button Text="Sign Up" Style="{StaticResource SignUpButton}"
+            <Button Text="{x:Static resources:AppResource.Login}" Style="{StaticResource LoginButton}" Command="{Binding LoginCommand}"/>
+            <Button Text="{x:Static resources:AppResource.SignUp}" Style="{StaticResource SignUpButton}"
                     xct:ShadowEffect.Color="#eeeeee"
                     xct:ShadowEffect.Radius="10"/>
             <Label Text="{StaticResource Language}" Style="{StaticResource LanguageLabel}"/>
@@ -54,11 +54,11 @@
 
         <Grid Grid.Row="2" Style="{StaticResource FooterWrapper}" >
             <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                <Label Text="Privacy Policy" Style="{StaticResource FooterLink}"/>
+                <Label Text="{x:Static resources:AppResource.PrivacyPolicy}" Style="{StaticResource FooterLink}"/>
                 <BoxView Style="{StaticResource VerticalSeperator}"/>
-                <Label Text="Terms and Conditions" Style="{StaticResource FooterLink}"/>
+                <Label Text="{x:Static resources:AppResource.TermsAndConditions}" Style="{StaticResource FooterLink}"/>
                 <BoxView Style="{StaticResource VerticalSeperator}"/>
-                <Label Text="EULA" Style="{StaticResource FooterLink}"/>
+                <Label Text="{x:Static resources:AppResource.EULA}" Style="{StaticResource FooterLink}"/>
             </StackLayout>
         </Grid>
         
