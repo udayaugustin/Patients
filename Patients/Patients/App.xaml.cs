@@ -28,10 +28,7 @@ namespace Patients
             containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
-            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();            
-            containerRegistry.RegisterForNavigation<PatientTabbedPage, PatientTabbedPageViewModel>();
-            containerRegistry.RegisterForNavigation<PatientsListPage, PatientsListPageViewModel>();
+            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
             containerRegistry.RegisterForNavigation<PatientsTabPage, PatientsTabPageViewModel>();
             ViewModelLocationProvider.Register<PatientsView, PatientsViewModel>();
         }

@@ -78,7 +78,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomRenderers\CustomEntryRenderer.cs" />
     <Compile Include="CustomRenderers\SearchEntryRenderer.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="MainActivity.cs" />
