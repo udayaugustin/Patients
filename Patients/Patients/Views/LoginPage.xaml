@@ -16,8 +16,9 @@
         </Grid.RowDefinitions>
         <Image Grid.Row="0" Source="logo" Style="{StaticResource Logo}"/>
         <StackLayout Grid.Row="1" Style="{StaticResource FormWrapper}">
+            
             <Label Text="Email" Style="{StaticResource FieldLabel}" FontAttributes="Bold"/>
-            <material:MaterialEntry Style="{StaticResource EntryField}" x:Name="entry">
+            <material:MaterialEntry Text="{Binding Username}" Style="{StaticResource EntryField}" x:Name="entry">
                 <material:MaterialEntry.CustomTrailingIcon>
                     <Label Text="Not you?" TextColor="#5272c2"/>
                 </material:MaterialEntry.CustomTrailingIcon>
@@ -27,7 +28,7 @@
             </material:MaterialEntry>
 
             <Label Text="Password" Style="{StaticResource FieldLabel}" Margin="0,20,0,0"/>
-            <material:MaterialEntry Style="{StaticResource EntryField}" IsPassword="True" ClearIconIsVisible="False">
+            <material:MaterialEntry Text="{Binding Password}" Style="{StaticResource PasswordField}">
                 <material:MaterialEntry.CustomTrailingIcon>
                     <Label Text="{StaticResource FingerPrintIcon}" Style="{StaticResource EntryFieldIcon}" TextColor="Black"/>
                 </material:MaterialEntry.CustomTrailingIcon>
@@ -44,7 +45,7 @@
 
             <Label Text="Forgot password?" Style="{StaticResource ForgotPasswordLabel}"/>
 
-            <Button Text="Log In" Style="{StaticResource LoginButton}"/>
+            <Button Text="Log In" Style="{StaticResource LoginButton}" Command="{Binding LoginCommand}"/>
             <Button Text="Sign Up" Style="{StaticResource SignUpButton}"
                     xct:ShadowEffect.Color="#eeeeee"
                     xct:ShadowEffect.Radius="10"/>
