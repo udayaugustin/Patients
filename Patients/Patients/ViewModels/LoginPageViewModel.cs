@@ -8,7 +8,7 @@ namespace Patients.ViewModels
     /// <summary>
     /// Class <c>LoginPageViewModel</c> contains the business logic for LoginPage.
     /// </summary>
-    public class LoginPageViewModel : BindableBase, IInitialize
+    public class LoginPageViewModel : BindableBase
     {
         private string username;
         private string password;
@@ -56,11 +56,6 @@ namespace Patients.ViewModels
         private async Task Login()
         {
             await navigationService.NavigateAsync("/NavigationPage/TabPage");
-        }
-
-        public void Initialize(INavigationParameters parameters)
-        {
-            
-        }
+        }        
     }
 }
