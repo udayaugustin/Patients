@@ -49,9 +49,10 @@ namespace Patients.ViewModels
 
             allPatients = Patients = new ObservableCollection<PatientViewModel>
             {
-                new PatientViewModel{Name="Name 1", Age=20, BloodGroup="B+"},
-                new PatientViewModel{Name="Name 2", Age=20, BloodGroup="B+"},
-                new PatientViewModel{Name="Name 3", Age=20, BloodGroup="B+"},
+                new PatientViewModel{Name="John Peterson", Age=20, BloodGroup="B+"},
+                new PatientViewModel{Name="Thomas", Age=20, BloodGroup="B+"},
+                new PatientViewModel{Name="Adam Savage", Age=20, BloodGroup="B+"},
+                new PatientViewModel{Name="George", Age=20, BloodGroup="B+"},
 
             };
         }

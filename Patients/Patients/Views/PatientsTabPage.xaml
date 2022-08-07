@@ -10,15 +10,19 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <ControlTemplate x:Key="PatientTabTemplate">
-                <Grid Style="{StaticResource TabViewGrid}">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                    <Grid Style="{StaticResource TabViewGrid}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
 
-                    <Label Grid.Row="0" Text="{TemplateBinding Unicode}" Style="{StaticResource TabViewIcon}"/>
-                    <Label Grid.Row="1" Text="{TemplateBinding Text}" Style="{StaticResource TabViewLabel}"/>
-                </Grid>
+                        <Label Grid.Column="0" Grid.Row="0" Text="{TemplateBinding Unicode}" Style="{StaticResource TabViewIcon}"/>
+                        <Label Grid.Column="0" Grid.Row="1" Text="{TemplateBinding Text}" Style="{StaticResource TabViewLabel}" HorizontalOptions="Center" />
+                        
+                    </Grid>
+                    <BoxView Style="{StaticResource TabViewSeperator}"/>
+                </StackLayout>
             </ControlTemplate>
 
             <ControlTemplate x:Key="MenuTabTemplate">
@@ -27,19 +31,18 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-                    <RelativeLayout Grid.Row="0" Style="{StaticResource TabViewMenuLayout}">
+                    <RelativeLayout Grid.Row="0" Style="{StaticResource TabViewMenuLayout}" HorizontalOptions="Center">
                         <Label Text="{StaticResource MenuBar}" x:Name="MenuIcon" Style="{StaticResource TabViewIcon}"
-                       RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=12}"
-                       RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}"/>
+                               RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=12}"
+                               RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}"/>
                         <Frame Style="{StaticResource BadgeWrapper}"
-                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, Property=X, ElementName=MenuIcon, Constant=10}"
-                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, Property=Y, ElementName=MenuIcon, Constant=-10}">
+                               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, Property=X, ElementName=MenuIcon, Constant=10}"
+                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, Property=Y, ElementName=MenuIcon, Constant=-10}">
                             <Label Text="8" Style="{StaticResource Badge}"/>
                         </Frame>
                     </RelativeLayout>
-                    <Label Grid.Row="1" Text="Menu" Style="{StaticResource TabViewLabel}" />
+                    <Label Grid.Row="1" Text="Menu" Style="{StaticResource TabViewLabel}" HorizontalOptions="Center" />
                 </Grid>
-                
             </ControlTemplate>
         </ResourceDictionary>
     </ContentPage.Resources>
